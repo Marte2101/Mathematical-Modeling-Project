@@ -160,7 +160,7 @@ def test_large_network(model="barabasi_albert"):
     graph.infect_node(0)
 
     infections_over_time, simulated_time, total_time = [], [], 0.0
-    for _ in range(1000): # number of event we want to observe (it define the simulation time)
+    for _ in range(1000): # number of events/steps we want to observe (it define the simulation time)
         infections_over_time.append(
             len([n for n in graph.G.nodes if graph.G.nodes[n]['infected']]))
         wait_time = graph.simulate_tau_step()
@@ -191,3 +191,4 @@ if __name__ == "__main__":
     print("--- %s seconds ---" % (time.time() - start_time1))
 
     print("--- %s seconds ---" % (time.time() - start_time)) # total time from the start of the program
+
